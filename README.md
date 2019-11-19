@@ -1,5 +1,4 @@
 # TeamCity Google Cloud Deployment Manager template
-[![official project](http://jb.gg/badges/official.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
 
 Allows creating a TeamCity deployment in Google Cloud by using the [gcloud tool](https://cloud.google.com/sdk/gcloud/) locally or in the [Google Cloud console](https://console.cloud.google.com/).
 
@@ -42,7 +41,7 @@ The easiest and **not secure** way to create test TeamCity deployment is to exec
 
 ```sh
 > gcloud deployment-manager deployments create <deploymentName> \
-  --template https://raw.githubusercontent.com/JetBrains/teamcity-google-template/master/teamcity.jinja \
+  --template https://raw.githubusercontent.com/seansaleh/teamcity-google-template/master/teamcity.jinja \
   --properties zone:<zone>
 ```
 
@@ -63,7 +62,7 @@ To create a production ready TeamCity deployment you need to have a domain name 
 
 ```sh
 > gcloud deployment-manager deployments create <deploymentName> \
-  --template https://raw.githubusercontent.com/JetBrains/teamcity-google-template/master/teamcity.jinja \
+  --template https://raw.githubusercontent.com/seansaleh/teamcity-google-template/master/teamcity.jinja \
   --properties zone:<zone>,ipAddress:<ipAddress>,domainName:<domainName>,domainOwnerEmail:<domainOwnerEmail>
 ```
 
@@ -106,7 +105,7 @@ To change the TeamCity version, start the deployment script with the required ve
  
 ```sh
 > gcloud deployment-manager deployments update teamcity \
-  --template https://raw.githubusercontent.com/JetBrains/teamcity-google-template/master/teamcity.jinja \
+  --template https://raw.githubusercontent.com/seansaleh/teamcity-google-template/master/teamcity.jinja \
   --properties zone:<zone>,version:<version>
 ```
 
@@ -125,7 +124,7 @@ During deployment, the template allocates the following resource:
 After deployment you will be able to connect to the GCE instance via SSH. In CoreOS TeamCity works as the following systemd service:
 
 * `teamcity-server.service` - launches TeamCity server.
-* `teamcity-agent.service` - launches TeamCity agent.
+~~* `teamcity-agent.service` - launches TeamCity agent.~~ This has been disabled in this branch
 * `nginx.service` - provides reverse proxy for TeamCity server when `domainName` is set.
 * `letsencrypt.service` - executes auto SSL certificate retrieval for specified `domainName`.
 
