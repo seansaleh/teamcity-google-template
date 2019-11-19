@@ -125,7 +125,7 @@ During deployment, the template allocates the following resource:
 After deployment you will be able to connect to the GCE instance via SSH. In CoreOS TeamCity works as the following systemd service:
 
 * `teamcity-server.service` - launches TeamCity server.
-* ~~`teamcity-agent.service` - launches TeamCity agent.~~ This has been disabled in this branch
+* `teamcity-agent.service` - launches TeamCity agent.
 * `nginx.service` - provides reverse proxy for TeamCity server when `domainName` is set.
 * `letsencrypt.service` - executes auto SSL certificate retrieval for specified `domainName`.
 
