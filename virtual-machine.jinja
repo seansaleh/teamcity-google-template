@@ -420,6 +420,7 @@ resources:
       - accessConfigs:
         - name: external-nat
           type: ONE_TO_ONE_NAT
+          networkTier: STANDARD
 {%- if properties['ipAddress'] %}
           natIP: {{ properties['ipAddress'] }}
 {%- else %}
