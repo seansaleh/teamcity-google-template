@@ -108,9 +108,15 @@ To change the TeamCity version, start the deployment script with the required ve
   --template https://raw.githubusercontent.com/seansaleh/teamcity-google-template/master/teamcity.jinja \
   --properties zone:<zone>,version:<version>
 ```
-
 **Note**: The `zone` parameter cannot be changed during the deployment update.
+
 **Note**: These instructions are confusing, you should use the full set of params you did initially, otherwise you may run into errors
+
+To restart:
+```sh
+> gcloud compute instances stop teamcity-vm
+> gcloud compute instances start teamcity-vm
+```
 
 ## Under the Hood
 
