@@ -110,6 +110,7 @@ To change the TeamCity version, start the deployment script with the required ve
 ```
 
 **Note**: The `zone` parameter cannot be changed during the deployment update.
+**Note**: These instructions are confusing, you should use the full set of params you did initially, otherwise you may run into errors
 
 ## Under the Hood
 
