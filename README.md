@@ -1,8 +1,10 @@
 # TeamCity Google Cloud Deployment Manager template
 
+**NOTE**: This is for illustrative purposes only and is not intended to be used to create a production-ready deployment of TeamCity.
+
 Allows creating a TeamCity deployment in Google Cloud by using the [gcloud tool](https://cloud.google.com/sdk/gcloud/) locally or in the [Google Cloud console](https://console.cloud.google.com/).
 
-The template allows deploying a TeamCity [server](https://hub.docker.com/r/jetbrains/teamcity-server/) and [agent](https://hub.docker.com/r/jetbrains/teamcity-agent/) in Google Cloud Platform. It creates a MySQL database, a Google Compute Engine (GCE) instance with CoreOS and starts TeamCity in a Docker container.
+The template allows deploying a TeamCity [server](https://hub.docker.com/r/jetbrains/teamcity-server/) and [agent](https://hub.docker.com/r/jetbrains/teamcity-agent/) in Google Cloud Platform. It creates a MySQL database, a Google Compute Engine (GCE) instance with Flatcar Container Linux and starts TeamCity in a Docker container.
 
 ## Pre-requisites
 
@@ -124,7 +126,7 @@ During deployment, the template allocates the following resource:
 * Service account with `Project Viewer`, `Cloud SQL Client`, `Compute Instance Admin`, `Storage Object Admin` and `Service Account Token Creator` roles.
 * Network, firewall rules, and static IP address.
 * MySQL database and user.
-* GCE instance with a data disk powered by CoreOS and the assigned service account.
+* GCE instance with a data disk powered by Flatcar Container Linux and the assigned service account.
 
 ### GCE Instance
 
