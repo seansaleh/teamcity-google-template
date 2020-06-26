@@ -410,7 +410,7 @@ resources:
         boot: true
         initializeParams:
           diskName: {{ BASE_NAME }}-disk
-          sourceImage: {{ GlobalComputeUrl('teamcitytest-166414', 'images', 'flatcar-stable') }}
+          sourceImage: global/images/family/flatcar-linux
           diskSizeGb: 14
       - deviceName: {{ BASE_NAME }}-data
         type: PERSISTENT
