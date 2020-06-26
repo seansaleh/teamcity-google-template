@@ -414,7 +414,7 @@ resources:
           diskSizeGb: 14
       - deviceName: {{ BASE_NAME }}-data
         type: PERSISTENT
-        autoDelete: true
+        autoDelete: false
         source: $(ref.{{ BASE_NAME }}-data.selfLink)
     networkInterfaces:
       - accessConfigs:
