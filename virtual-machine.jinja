@@ -412,6 +412,7 @@ resources:
           diskName: {{ BASE_NAME }}-disk
           sourceImage: global/images/family/flatcar-linux
           diskSizeGb: 14
+          onUpdateAction: RECREATE_DISK_IF_SOURCE_CHANGED
       - deviceName: {{ BASE_NAME }}-data
         type: PERSISTENT
         autoDelete: false
