@@ -247,6 +247,7 @@ resources:
                   -e VIRTUAL_PORT=8111 \
                   -e VIRTUAL_HOST={{ properties['domainName'] }} \
                   -e LETSENCRYPT_HOST={{ properties['domainName'] }} \
+                  -e TEAMCITY_HTTPS_PROXY_ENABLED=true \
   {%- if properties['domainOwnerEmail'] %}
                   -e LETSENCRYPT_EMAIL={{ properties['domainOwnerEmail'] }} \
   {%- endif %}
